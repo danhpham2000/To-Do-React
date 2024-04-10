@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin-left: 25px;
+  padding: 10px;
+  background-color: var(--color-white);
+  border-radius: 5px;
+}
+
+.header h1 a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.nav-link {
+  margin-right: 25px;
+}
+
+.nav-link a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--color-white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#login {
+}
+
+#signup {
+  background: var(--color-white);
+  color: var(--color-text);
+  transition: all 0.5s ease;
+}
+
+#signup:hover {
+  background: var(--color-bg-primary);
+  color: var(--color-white);
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  --color-bg-primary: #6157ff;
+  --color-bg-secondary: #ee49fd;
+  --color-white: #faf6f6;
+  --color-text: #333;
+}
+body {
+  margin: 0;
+  background-image: linear-gradient(
+    to right,
+    var(--color-bg-primary),
+    var(--color-bg-secondary)
+  );
+  background-repeat: no-repeat;
+  font-family: "Lexend Deca";
+  height: 110vh;
+}
