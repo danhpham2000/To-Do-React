@@ -10,7 +10,7 @@
   width: 700px;
   height: 600px;
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .form-todo {
@@ -51,12 +51,62 @@
 }
 
 .todo-list {
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.title {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  margin-bottom: -20px;
+}
+
+.title h4 {
+  grid-column: span 1;
+}
+
+.title h4:nth-child(2) {
+  margin-left: 40px;
+}
+
+.title h4:last-child {
+  justify-self: left;
+  margin-left: 70px;
 }
 
 .todo {
   margin-top: 20px;
   border-bottom: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+.todo > * {
+  grid-column: span 1;
+}
+
+.todo *:nth-child(2) {
+  margin-left: 40px;
+}
+
+.todo *:last-child {
+  justify-self: center;
+}
+
+.action {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.action button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.action button:first-child {
+  margin-left: -30px;
+}
+
+.action button:hover {
+  background: #ddd;
 }
