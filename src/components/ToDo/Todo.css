@@ -11,6 +11,7 @@
   height: 600px;
   border-radius: 5px;
   padding: 30px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .form-todo {
@@ -101,6 +102,7 @@
   background: inherit;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .action button:first-child {
