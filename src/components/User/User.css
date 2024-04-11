@@ -1,0 +1,116 @@
+.login-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  margin-top: 60px;
+  background: var(--color-white);
+  width: 400px;
+  height: 350px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  animation: slideRight 0.6s ease;
+}
+
+.signup-card {
+  margin-top: 60px;
+  background: var(--color-white);
+  width: 400px;
+  height: 430px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  animation: slideLeft 0.6s ease;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-40px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(40px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.title-login {
+  text-align: center;
+}
+
+.login-form > * {
+  display: block;
+  margin: 0 40px;
+}
+
+.login-form > *:not(:first-child) {
+  margin-top: 1em;
+}
+
+.login-form input {
+  width: 75%;
+  border-radius: 5px;
+  padding: 6px;
+  transition: all 0.5s ease;
+  border: 2px solid transparent;
+  outline: none;
+  font-family: "Lexend Deca";
+}
+
+.login-form input:focus {
+  border: 2px solid var(--color-bg-primary);
+}
+
+.btn-login {
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: none;
+  color: var(--color-white);
+  background: var(--color-bg-primary);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  opacity: 1;
+}
+
+.register {
+  text-align: center;
+}
+
+.register a,
+.register a:focus,
+.register a:visited,
+.register a:active {
+  text-decoration: none;
+  color: var(--color-bg-primary);
+}
