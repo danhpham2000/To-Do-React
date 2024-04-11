@@ -9,6 +9,9 @@ const TodoCard = () => {
     { title: "Complete Homework", priority: "High", id: 1 },
     { title: "Complete Workout", priority: "Medium", id: 2 },
     { title: "Complete Exam", priority: "Low", id: 3 },
+    { title: "Complete Homework", priority: "High", id: 12 },
+    { title: "Complete Workout", priority: "Medium", id: 22 },
+    { title: "Complete Workout", priority: "Medium", id: 23 },
   ]);
 
   return (

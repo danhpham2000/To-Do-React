@@ -1,4 +1,15 @@
+import "./Todo.css";
+
 const TodoList = ({ tasks }) => {
+  const handleComplete = () => {
+    const title = document.getElementById("taskName");
+    const priority = document.getElementById("taskPrior");
+    const checkButton = document.getElementById("check");
+
+    checkButton.addEventListener("click", () => {
+      alert("You clicked");
+    });
+  };
   return (
     <div className="todo-list">
       <div className="title">
@@ -8,11 +19,24 @@ const TodoList = ({ tasks }) => {
       </div>
       {tasks.map((task) => (
         <div className="todo" key={task.id}>
-          <p>{task.title}</p>
-          <p id="prior">{task.priority}</p>
+          <p id="taskName">{task.title}</p>
+          <p
+            className={`${
+              task.priority === "High"
+                ? "prior"
+                : task.priority === "Medium"
+                ? "medium"
+                : task.priority === "Low"
+                ? "low"
+                : ""
+            }`}
+            id="taskPrior"
+          >
+            {task.priority}
+          </p>
           <div className="action">
             <form>
-              <button id="check">
+              <button id="check" onClick={handleComplete}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
