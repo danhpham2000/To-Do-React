@@ -3,10 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
-  name: {
+  task: {
     type: String,
     require: true,
-    unique: true,
   },
   priority: {
     type: String,
@@ -14,4 +13,4 @@ const taskSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Task", taskSchema);
+module.exports = mongoose.model("TaskList", taskSchema);

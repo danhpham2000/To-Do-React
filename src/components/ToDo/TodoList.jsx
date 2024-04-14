@@ -1,15 +1,6 @@
 import "./Todo.css";
 
 const TodoList = ({ tasks }) => {
-  const handleComplete = () => {
-    const title = document.getElementById("taskName");
-    const priority = document.getElementById("taskPrior");
-    const checkButton = document.getElementById("check");
-
-    checkButton.addEventListener("click", () => {
-      alert("You clicked");
-    });
-  };
   return (
     <div className="todo-list">
       <div className="title">
@@ -18,8 +9,8 @@ const TodoList = ({ tasks }) => {
         <h4>Action</h4>
       </div>
       {tasks.map((task) => (
-        <div className="todo" key={task.id}>
-          <p id="taskName">{task.title}</p>
+        <div className="todo" key={task._id}>
+          <p className="taskName">{task.task}</p>
           <p
             className={`${
               task.priority === "High"
@@ -35,20 +26,19 @@ const TodoList = ({ tasks }) => {
             {task.priority}
           </p>
           <div className="action">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+                className="check"
+              >
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+              </svg>
+            </button>
             <form>
-              <button id="check" onClick={handleComplete}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 -960 960 960"
-                  width="24"
-                >
-                  <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
-                </svg>
-              </button>
-            </form>
-            <form>
-              <button>
+              <button type="submit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
