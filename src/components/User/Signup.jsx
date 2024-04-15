@@ -8,6 +8,9 @@ const Signup = () => {
         <h2 className="title-login">Sign up</h2>
 
         <form className="login-form">
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" />
+
           <label htmlFor="email">Email</label>
           <input type="text" name="email" />
 

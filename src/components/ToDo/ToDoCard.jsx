@@ -1,31 +1,28 @@
 import TodoList from "./TodoList";
 import "./Todo.css";
 import { useState, useEffect } from "react";
+import { useTodosContext } from "../../hooks/useTodosContext";
 
 const TodoCard = () => {
+  const { tasks, dispatch } = useTodosContext();
+  const [error, setError] = useState("");
   const [task, setTask] = useState("");
   const [priority, setPriority] = useState("");
-  const [error, setError] = useState("");
-  const [tasks, setTasks] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3001/tasks")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        console.log("Res ok");
-        return res.json();
-      })
-      .then((data) => {
-        setTasks(data);
-        setError(null);
-      })
-      .catch((err) => {
-        setError(err);
-        console.log(err);
-      });
-  }, []);
+    const fetchTasks = async () => {
+      const res = await fetch("http://localhost:3001/tasks");
+      const json = await res.json();
+
+      if (!res.ok) {
+        throw Error(json.message);
+      }
+      if (res.ok) {
+        dispatch({ type: "SET_TASKS", payload: json.tasks });
+      }
+    };
+    fetchTasks();
+  }, [dispatch]);
 
   const handleAddTodo = async (event) => {
     event.preventDefault();
@@ -42,6 +39,7 @@ const TodoCard = () => {
       console.log(error);
     }
     if (res.ok) {
+      dispatch({ type: "CREATE_TASK", payload: json.task });
       console.log(json.message);
       setError(null);
     }
@@ -74,7 +72,7 @@ const TodoCard = () => {
           </button>
         </form>
         {error && <div>{error}</div>}
-        {tasks && <TodoList tasks={tasks.tasks} />}
+        {tasks && <TodoList tasks={tasks} />}
       </div>
     </div>
   );

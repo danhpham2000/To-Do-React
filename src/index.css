@@ -6,14 +6,17 @@
   --color-white: #faf6f6;
   --color-text: #333;
 }
-body {
-  margin: 0;
+
+html {
   background-image: linear-gradient(
     to right,
     var(--color-bg-primary),
     var(--color-bg-secondary)
   );
   background-repeat: no-repeat;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
   font-family: "Lexend Deca";
-  height: 120vh;
 }
