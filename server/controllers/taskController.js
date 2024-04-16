@@ -1,6 +1,6 @@
 const Task = require("../models/task");
 
-module.exports.getTasks= async (req, res) => {
+module.exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
     res.status(200).json({
@@ -17,14 +17,14 @@ module.exports.getTasks= async (req, res) => {
 module.exports.postTask = async (req, res) => {
   try {
     const { task, priority } = req.body;
-    const todo = new Task({
+    const newTask = new Task({
       task: task,
       priority: priority,
     });
-    await todo.save();
+    await newTask.save();
     res.status(201).json({
       message: "Todo created",
-      task: task,
+      newTask: newTask,
     });
   } catch (err) {
     res.status(400).json({

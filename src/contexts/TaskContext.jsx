@@ -1,8 +1,8 @@
 import { createContext, useReducer } from "react";
 
-export const TodosContext = createContext();
+export const TasksContext = createContext();
 
-export const todosReducer = (state, action) => {
+export const tasksReducer = (state, action) => {
   switch (action.type) {
     case "SET_TASKS":
       return {
@@ -18,13 +18,13 @@ export const todosReducer = (state, action) => {
   }
 };
 
-export const TodosContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(todosReducer, {
+export const TasksContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(tasksReducer, {
     tasks: null,
   });
   return (
-    <TodosContext.Provider value={{ ...state, dispatch }}>
+    <TasksContext.Provider value={{ ...state, dispatch }}>
       {children}
-    </TodosContext.Provider>
+    </TasksContext.Provider>
   );
 };

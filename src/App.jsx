@@ -3,14 +3,14 @@ import "./index.css";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/User/Login";
 import Signup from "./components/User/Signup";
-import ToDoCard from "./components/ToDo/ToDoCard";
+import TaskCard from "./components/Task/TaskCard";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route index element={<ToDoCard />} />
+        <Route index element={<TaskCard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
