@@ -25,6 +25,4 @@ userSchema.pre("save", async (next) => {
   next();
 });
 
-userSchema.statics.login
-
 module.exports = mongoose.model("User", userSchema);

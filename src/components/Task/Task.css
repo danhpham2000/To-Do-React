@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.card {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 5px;
+  animation: appear 0.6s linear;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-task input {
+  outline: none;
+  border: 2px solid transparent;
+  padding: 10px;
+  font-family: "Lexend Deca";
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-task input:focus {
+  border: 2px solid var(--color-bg-primary);
+}
+
+.form-task input:nth-child(2) {
+  margin-left: 10px;
+}
+
+.form-task button {
+  margin-left: 10px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: var(--color-bg-primary);
+  opacity: 0.5;
+  color: var(--color-white);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.form-task button:hover {
+  opacity: 1;
+  color: var(--color-white);
+}
+
+.details .title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.title h4:nth-child(2) {
+  justify-self: left;
+  margin-left: 20px;
+}
+
+.title h4:nth-child(3) {
+  justify-self: end;
+}
+
+.prior {
+  background: rgb(239, 29, 29);
+  color: rgb(244, 238, 238);
+  width: 40%;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.medium {
+  background: rgb(232, 172, 9);
+  color: #fff8e1;
+  width: 40%;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.low {
+  background: rgb(44, 208, 55);
+  color: rgb(244, 238, 238);
+  width: 40%;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.task-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.task-details p:nth-child(2) {
+  justify-self: left;
+  margin-left: 20px;
+}
+
+.task-details button {
+  border: none;
+  background: none;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-self: end;
+}
+
+.task-details button:hover {
+  background: #ddd;
+}

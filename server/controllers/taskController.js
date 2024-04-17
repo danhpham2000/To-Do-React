@@ -2,7 +2,7 @@ const Task = require("../models/task");
 
 module.exports.getTasks = async (req, res) => {
   try {
-    const tasks = await Task.find();
+    const tasks = await Task.find().sort({ createdAt: -1 });
     res.status(200).json({
       message: "Tasks fetched!",
       tasks: tasks,
@@ -36,9 +36,10 @@ module.exports.postTask = async (req, res) => {
 module.exports.deleteTask = async (req, res) => {
   try {
     const taskId = req.params.taskId;
-    await Task.findByIdAndDelete(taskId);
+    const task = await Task.findByIdAndDelete(taskId);
     res.status(200).json({
       message: "Todo deleted",
+      task: task,
     });
   } catch (err) {
     res.status(400).json({ message: err.message });

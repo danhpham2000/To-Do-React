@@ -23,7 +23,12 @@ const TaskCard = () => {
     <div className="container">
       <div className="card">
         <TaskForm />
-        <div className="title">
+        <div className="details">
+          <div className="title">
+            <h4>Task</h4>
+            <h4>Priority</h4>
+            <h4>Action</h4>
+          </div>
           {tasks &&
             tasks.map((task) => <TaskDetails task={task} key={task._id} />)}
         </div>
